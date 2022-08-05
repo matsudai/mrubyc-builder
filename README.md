@@ -54,9 +54,13 @@ wsl --import mrubyc-2.1.0 C:\wsl-distro\mrubyc-2.1.0 .\mrubyc-2.1.0.tar --versio
 
 After imported, you can delete image.
 
+* `<IMAGE_ID>` is IMAGE_ID of localhost/mrubyc in result of `docker images` . (e.g. `53a4e3c83db1`)
+
 ```cmd
 del .\mrubyc-2.1.0.tar
-docker rmi <CONTAINER_ID>
+
+docker images
+docker rmi <IMAGE_ID>
 ```
 
 ## Check
@@ -74,7 +78,7 @@ wsl -d mrubyc-2.1.0
 * refs: https://github.com/gfd-dennou-club/mrubyc-esp32.git
 
 ```sh
-git clone --depth 1 https://github.com/gfd-dennou-club/mrubyc-esp32.git
+git clone --branch d87c826440c3a819e68d5a43de5556a0e348feba --depth 1 https://github.com/gfd-dennou-club/mrubyc-esp32.git
 cd mrubyc-esp32
 ```
 

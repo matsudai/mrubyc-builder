@@ -83,7 +83,7 @@ RUN usermod -a -G sudo $user && \
 USER $user
 
 #
-# Install ESP-IDF4.4.1.
+# Install ESP-IDF v4.2.3.
 #
 # refs: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html
 #
@@ -96,7 +96,7 @@ RUN apt update && \
 USER $user
 RUN mkdir -p ~/esp && \
     cd ~/esp && \
-    git clone --recursive --branch v4.4.1 --depth 1 https://github.com/espressif/esp-idf.git && \
+    git clone --recursive --shallow-submodules --branch v4.2.3 --depth 1 https://github.com/espressif/esp-idf.git && \
     cd ~/esp/esp-idf && \
     ./install.sh all
 
