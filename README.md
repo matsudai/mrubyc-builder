@@ -92,9 +92,8 @@ export PORT=/dev/ttyS3 # Specify your device
 4. Build and flash mrubyc programs.
 
 ```sh
-make spiffs         # Build
-make flash-vm       # Build & Flash
-make spiffs-monitor # Monitor
+make flash          # Build Ruby-class + C & flash (When you update only master.rb, this command is not required)
+make spiffs monitor # Build master.rb & flash & monitor
 
 # Results (exit : `ctrl + ]`)
 
