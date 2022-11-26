@@ -78,16 +78,22 @@ wsl -d mrubyc-2.1.0
 * refs: https://github.com/gfd-dennou-club/mrubyc-esp32.git
 
 ```sh
-git clone --branch d87c826440c3a819e68d5a43de5556a0e348feba --depth 1 https://github.com/gfd-dennou-club/mrubyc-esp32.git
+git clone --filter=blob:none https://github.com/gfd-dennou-club/mrubyc-esp32.git
 cd mrubyc-esp32
 ```
 
 3. Init mrubyc project in WSL terminal.
 
 ```sh
-make menuconfig        # -> ESC
+make menuconfig        # Check `Serial flasher config > Default serial port, Default baud rate`
 export PORT=/dev/ttyS3 # Specify your device
+export BAUD=115200     # Specify your device
 ```
+
+* ESP32 (M5 BASIC)
+    * Default baud rate : 921600
+* ESP32-PICO (M5 ATOM Lite)
+    * Default baud rate : 115200
 
 4. Build and flash mrubyc programs.
 
