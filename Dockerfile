@@ -94,6 +94,12 @@ RUN apt update && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
 USER $user
+
+# Install virtualenv with `break-system-packages`
+#
+# refs: https://github.com/matsudai/mrubyc-builder/issues/1
+RUN /usr/bin/python3 -m pip install --user virtualenv --break-system-packages
+
 RUN mkdir -p ~/esp && \
     cd ~/esp && \
     git clone --recursive --shallow-submodules --branch release/v4.2 --depth 1 https://github.com/espressif/esp-idf.git && \
